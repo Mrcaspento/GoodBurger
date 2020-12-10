@@ -8,3 +8,12 @@ CREATE TABLE burgers(
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("CheeseBurger", false);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("BigMAC", false);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("DoubleQuarterPounder", true);
