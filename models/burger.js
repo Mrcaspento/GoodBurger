@@ -1,9 +1,21 @@
 const orm = require('../config/orm.js')
-const express = require('express')
+const express = require('express');
+//IMport the ORM to create functions that will interact with the database.
 //model
-
+//had "table in the `all: function(table,cb)`"
 var burger = {
-    all: function(table, cb) {
-        orm.getAll()
-    } 
-}
+    all: function(cb) {
+        orm.getAll("burgers", function(res) {
+            cb(res);
+        });
+    } ,
+    //variables cols and vals are arrays
+    create: function(cos, vals, cb){
+        orm.create("burgers", cols, vals, function(res){
+            cb(res);
+        });
+    }
+};
+
+//export the database functions for the controller (burgers_controller.js)
+module.exports = burger;

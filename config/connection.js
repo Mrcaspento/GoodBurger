@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 let connection;
-
+//mysql://fklzxboqmyrrh6t7:d2x4ia1b2knhksgu@otwsl2e23jrxcqvx.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/klur6gy0ttnv2f3k
 
 if(process.env.JAWSDB_URL) {
 connection =mysql.createConnection(process.env.JAWSDB_URL);
