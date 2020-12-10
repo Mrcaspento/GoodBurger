@@ -1,4 +1,4 @@
-const connection = require('connection.js');
+const connection = require('./connection.js');
 
 // Object Relational Mapper (ORM)
 
@@ -6,9 +6,9 @@ const connection = require('connection.js');
 // The ? signs are for swapping out other values
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
-selectAll();
-insertOne();
-updateOne();
+// selectAll();
+// insertOne();
+// updateOne();
 
 const orm = {
     getAll: function(table, cb){
