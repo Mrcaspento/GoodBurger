@@ -3,16 +3,14 @@
 <h3>Welcome to GoodBurger How may I take your order?</h2>
 
 
-<h2>Burgers that are not devoured!</h2>
+<h2>Burgers to eat!</h2>
 <ul>
     {{#each burgers}}
-        {{#unless devoured}}
-            {{ burgers devoured=true}}
-        {{/unless}}
+        
     {{/each}}
 </ul>
 
-<h2>Burgers that are devoured!</h2>
+<h2>Burgers currently going through your large and small intestintes !</h2>
 
 <ul>
     {{#each burgers}}
@@ -21,7 +19,15 @@
         {{/if}}
     {{/each}}
 </ul>
+<li>
+	{{name}}
 
+	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+		{{#if devoured}}Order Burger{{else}}{{/if}}
+	</button>
+
+	<button class="delete-burger" data-id="{{this.id}}">Eat Burger</button>
+</li>
 <h2>Add a burger</h2>
 <form class= "create-form">
 

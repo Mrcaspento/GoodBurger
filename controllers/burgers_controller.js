@@ -22,6 +22,7 @@ router.post("/api/burgers", function(req,res){
 router.put("/api/burgers/:id", function(req, res){
     var condition = "id = " + req.params.id;
     console.log("condition", condition);
+
     burger.update(
         {
             devoured: req.body.devoured
@@ -35,5 +36,17 @@ router.put("/api/burgers/:id", function(req, res){
         }
     );
 });
+
+router.delete("/api/burgers/:id", function(req, res){
+    var condition = "id = " + req.params.id;
+    burger.delete(condition, function(result){
+        if(result.affectedRows == 0){
+            //if no rows changed, then the ID does not exist, so 404
+            return res.status(404).end();
+        }else {
+            res.status(200).end();
+        }
+    })
+})
 
 module.exports = router;
