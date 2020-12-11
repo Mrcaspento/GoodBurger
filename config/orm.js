@@ -6,9 +6,15 @@ const connection = require('./connection.js');
 // The ? signs are for swapping out other values
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
-// selectAll();
+// selectAll(); // done
 // insertOne();
-// updateOne();
+// updateOne();// done
+ 
+
+
+
+
+
 
 const orm = {
     getAll: function(table, cb){
@@ -18,6 +24,24 @@ const orm = {
             cb(result)
         })
         
-    }
+    },
+    //an example of objColVals would be {burger_name: cheesburger, devoured: false}
+    updateOne: function(table, objColVals, condition, cb){
+        var queryString = "UPDATE " + table;
+
+        queryString += " SET ";
+        queryString += objToSql(objColVals);
+        queryString += " WHERE ";
+        queryString += condition;
+    
+        console.log(queryString);
+        connection.query(queryString, function(err, result) {
+          if (err) {
+            throw err;
+          }
+    
+          cb(result);
+        });
+      }
 }
 module.exports = orm;
