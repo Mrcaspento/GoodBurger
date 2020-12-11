@@ -2,7 +2,7 @@ const express =require('express');
 const router = express.Router();
 const burger = require('../models/burger.js');
 //route controller
-router.get('/', function (req, res) {
+router.get("/", function (req, res) {
     burger.all(function(data){
         var burgerObject = {
             burgers: data
@@ -46,7 +46,7 @@ router.delete("/api/burgers/:id", function(req, res){
         }else {
             res.status(200).end();
         }
-    })
-})
+    });
+});
 
 module.exports = router;
