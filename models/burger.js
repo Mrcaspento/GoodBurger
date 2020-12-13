@@ -4,7 +4,7 @@ const orm = require('../config/orm.js')
 //model
 //had "table in the `all: function(table,cb)`"
 var burger = {
-    all: function(cb) {
+    getAll: function(cb) {
         orm.getAll("burgers", function(res) {
             cb(res);
         });
@@ -20,11 +20,11 @@ var burger = {
             cb(res)
         });
     },
-    delete: function(condition, cb) {
-        orm.delete("burgers", condition, function(res){
-            cb(res);
-        });
-    }
+    // delete: function(condition, cb) {
+    //     orm.delete("burgers", condition, function(res){
+    //         cb(res);
+    //     });
+    // }
 };
 
 //export the database functions for the controller (burgers_controller.js)

@@ -1,44 +1,59 @@
 <h1>GoodBurgers</h1>
 
 <h3>Welcome to GoodBurger How may I take your order?</h2>
+<h1>Burgers</h1>
+<div class="menu">
+  <div class="orderHere">
+    <!-- burgers if devoured = false -->
+    <h1>Made to Order!</h1>
 
+    <div class="item">
+      {{#each burgers}}
+      {{#unless devoured}}
+      <!--burger name-->
+      <h2>{{burger_name}}</h2>
+      <!-- button to eat or order another -->
+      <button class="devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+        {{#if devoured}}YUM thats $2.50 down the drain!{{else}}SEND THAT BAD BOY TO YOUR LARGE AND SMALL INTESTINES!{{/if}}
+      </button>
+      {{/unless}}
+      {{/each}}
+    </div>
+  </div>
+  <div class="alreadyEaten">
+    <!-- burgers if devoured = true -->
+    <h1>Already Eaten!</h1>
 
-<h2>Burgers to eat!</h2>
-<ul>
-    {{#each burgers}}
-        
-    {{/each}}
-</ul>
+    <div class='item'>
+      {{#each burgers}}
+      {{#if devoured}}
+      <!--burger_name-->
+      <h2>{{burger_name}}</h2>
+      <!-- button to eat and Order) -->
+      <button class="devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
+        {{#if devoured}}Devoured! Order another!{{else}}Devour your burger!{{/if}}
+      </button>
+      {{/if}}
+      {{/each}}
+    </div>
+  </div>
 
-<h2>Burgers currently going through your large and small intestintes !</h2>
+<div class="addBurger">
+<!-- create  a burger-->
+<h1>Add a Burger</h1>
+<form class="form">
+  <div class="form-group">
+    <label for="burger">Burger:</label>
+    <input type="text" id="burger" name="burger_name">
+  </div>
 
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            {{ burgers devoured = false}}
-        {{/if}}
-    {{/each}}
-</ul>
-<li>
-	{{name}}
+  <div class="form-group">
+    <label for="devour">Devour?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Bro you Already Ate it!<br>
+    <input type="radio" name="devoured" value="0"> Make another Burger!
+  </div>
 
-	<button class="change-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}Order Burger{{else}}{{/if}}
-	</button>
-
-	<button class="delete-burger" data-id="{{this.id}}">Eat Burger</button>
-</li>
-<h2>Add a burger</h2>
-<form class= "create-form">
-
- <div class="form-group">
-    <label for="bu">Burger Name:</label>
-    <input type="text" id="bu" name="burger_name">
- </div>
-
- <div class="form-group">
-     <label for="devo">ORDER</label><br>
-   
- </div>
- <button type="submit">Add Burger</button>
+  <button type="submit">Add Burger</button>
 </form>
+</div>
+</div>
