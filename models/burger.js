@@ -4,8 +4,8 @@ const orm = require('../config/orm.js')
 //model
 //had "table in the `all: function(table,cb)`"
 var burger = {
-    getAll: function(cb) {
-        orm.getAll("burgers", function(res) {
+    all: function(cb) {
+        orm.all("burgers", function(res) {
             cb(res);
         });
     } ,
