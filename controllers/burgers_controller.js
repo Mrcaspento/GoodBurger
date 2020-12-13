@@ -3,7 +3,7 @@ const router = express.Router();
 const burger = require('../models/burger.js');
 //route controller
 router.get("/", function (req, res) {
-    burger.getAll(function(data){
+    burger.all(function(data){
         var burgerObject = {
             burgers: data
         };
