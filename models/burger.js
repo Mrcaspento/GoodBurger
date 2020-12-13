@@ -16,10 +16,11 @@ var burger = {
         });
     },
     update: function(objColVals, conditon, cb) {
-        orm.update("burgers", objColVals, conditon, cb, function(res){
+        orm.update("burgers", objColVals, conditon, function(res){
             cb(res)
         });
-    },
+    }
+    // taking out the delete function cause of bugs but will save for later use
     // delete: function(condition, cb) {
     //     orm.delete("burgers", condition, function(res){
     //         cb(res);
