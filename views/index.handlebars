@@ -2,7 +2,16 @@
   <h1>WELCOME TO GOODBURGER</h1>
     <div class="row" id="burgerBox">
     
-      <div class="col-md-8"></div>
+      <div class="col-md-8">
+        <h3>BURRRGERS</h3>
+        <ul>
+          {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block }}
+            {{/unless}}
+            {{/each}}
+        </ul>
+      </div>
     
     
      </div>
