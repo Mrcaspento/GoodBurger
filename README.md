@@ -18,7 +18,7 @@ A restaurant app that lets users input the names of burgers they'd like to eat, 
 `npmi express` & `npm i express-handlebars` `npm i mysql`
 
 ## Usage
-
+![gif](public\assets\gif\MVC With Burgers!.gif)
  Displaying my grasp of Full Stack Development. 
 
  We can test for:

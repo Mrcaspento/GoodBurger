@@ -24,6 +24,7 @@ $(function () {
 
     var newBurger = {
       burger_name: $("#ca").val().trim(),
+      devoured: 0 // aka false
     };
 
     $.ajax("/api/burgers", {
